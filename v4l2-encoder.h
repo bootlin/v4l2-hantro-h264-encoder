@@ -8,7 +8,6 @@
 
 #include <linux/videodev2.h>
 
-#include <h264-ctrls.h>
 #include <h264-rate-control.h>
 #include <draw.h>
 

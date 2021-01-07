@@ -16,7 +16,6 @@
 
 #include <linux/videodev2.h>
 #include <linux/media.h>
-#include <h264-ctrls.h>
 
 #include <media.h>
 #include <v4l2.h>
@@ -386,7 +385,7 @@ int v4l2_encoder_h264_src_controls_setup(struct v4l2_encoder_h264_src_controls *
 	h264_src_controls->encode_params_control =
 		&h264_src_controls->controls[index];
 	v4l2_ext_control_setup_base(h264_src_controls->encode_params_control,
-				    V4L2_CID_MPEG_VIDEO_H264_ENCODE_PARAMS);
+				    V4L2_CID_STATELESS_H264_ENCODE_PARAMS);
 	v4l2_ext_control_setup_compound(h264_src_controls->encode_params_control,
 					&h264_src_controls->encode_params,
 					sizeof(h264_src_controls->encode_params));
@@ -395,7 +394,7 @@ int v4l2_encoder_h264_src_controls_setup(struct v4l2_encoder_h264_src_controls *
 	h264_src_controls->encode_rc_control =
 		&h264_src_controls->controls[index];
 	v4l2_ext_control_setup_base(h264_src_controls->encode_rc_control,
-				    V4L2_CID_MPEG_VIDEO_H264_ENCODE_RC);
+				    V4L2_CID_STATELESS_H264_ENCODE_RC);
 	v4l2_ext_control_setup_compound(h264_src_controls->encode_rc_control,
 					&h264_src_controls->encode_rc,
 					sizeof(h264_src_controls->encode_rc));
@@ -422,7 +421,7 @@ int v4l2_encoder_h264_dst_controls_setup(struct v4l2_encoder_h264_dst_controls *
 	h264_dst_controls->encode_feedback_control =
 		&h264_dst_controls->controls[index];
 	v4l2_ext_control_setup_base(h264_dst_controls->encode_feedback_control,
-				    V4L2_CID_MPEG_VIDEO_H264_ENCODE_FEEDBACK);
+				    V4L2_CID_STATELESS_H264_ENCODE_FEEDBACK);
 	v4l2_ext_control_setup_compound(h264_dst_controls->encode_feedback_control,
 					&h264_dst_controls->encode_feedback,
 					sizeof(h264_dst_controls->encode_feedback));

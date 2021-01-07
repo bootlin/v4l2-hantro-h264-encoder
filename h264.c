@@ -14,7 +14,6 @@
 
 #include <linux/videodev2.h>
 #include <linux/media.h>
-#include <h264-ctrls.h>
 
 #include <v4l2-encoder.h>
 #include <bitstream.h>
